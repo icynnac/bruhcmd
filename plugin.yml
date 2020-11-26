@@ -1,0 +1,10 @@
+name: BruhCMD
+version: 1.2
+author: Icynnac
+main: me.Icynnac.bruhcmd.Main
+description: idk
+
+commands:
+  bruh:
+    aliases: [br]
+    description: this is a command ig
