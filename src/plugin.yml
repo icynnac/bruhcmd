@@ -8,7 +8,7 @@ commands:
   bruh:
     description: The command that allows you to see bruh.
   bruh about:
-    description: The general info for BruhCMD
+    description: The general info for BruhCMD.
     permission: bruhcmd.about
   bruh reload:
     description: Reloads the plugin.
