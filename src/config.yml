@@ -2,3 +2,4 @@ configuration:
   messages:
      bruh-message: '&9&lBruhCMD &8&l>> &cB&er&au&9h'
      reload-message: '&9&lBruhCMD &8&l>> &9BruhCMD successfully reloaded.'
+     no-permission-message: '&9&lBruhCMD &8&l>> &cNo permission, contact an administrator if you think this is an error.'
