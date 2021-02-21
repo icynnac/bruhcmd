@@ -13,3 +13,11 @@ commands:
   bruh reload:
     description: Reloads the plugin.
     permission: bruhcmd.reload
+  cutg:
+    description: Someone likes ya cut G
+    permission: bruhcmd.cutg
+  pop:
+    description: pop cat + pop command
+  yeet:
+    description: yeet
+    permission: bruhcmd.yeet
