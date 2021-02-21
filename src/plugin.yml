@@ -14,7 +14,7 @@ commands:
     description: Reloads the plugin.
     permission: bruhcmd.reload
   cutg:
-    description: Someone likes ya cut G
+    description: Someone likes ya cut G.
     permission: bruhcmd.cutg
   pop:
     description: pop cat + pop command
