@@ -1,5 +1,5 @@
 name: BruhCMD
-version: 1.4
+version: 1.5.1
 author: Icynnac
 main: me.Icynnac.bruhcmd.Main
 description: idk
@@ -7,7 +7,7 @@ description: idk
 commands:
   bruh:
     description: The command that allows you to see bruh.
-  bruh about:
+  bruhcmd:
     description: The general info for BruhCMD.
     permission: bruhcmd.about
   bruh reload:
@@ -21,3 +21,6 @@ commands:
   yeet:
     description: yeet
     permission: bruhcmd.yeet
+  sus:
+    description: when the impostor is sus
+    permission: bruhcmd.sus
