@@ -1,5 +1,28 @@
 configuration:
   messages:
-     bruh-message: '&9&lBruhCMD &8&l>> &cB&er&au&9h'
-     reload-message: '&9&lBruhCMD &8&l>> &9BruhCMD successfully reloaded.'
-     no-permission-message: '&9&lBruhCMD &8&l>> &cNo permission, contact an administrator if you think this is an error.'
+    # /bruh command
+    bruh-message: '&b&lBruhCMD &8&l>> &cB&er&au&9h'
+    reload-message: '&b&lBruhCMD &8&l>> &9BruhCMD successfully reloaded.'
+    # General invalid messages
+    no-permission-message: '&c&lBruhCMD &8&l>> &cNo permission, contact an administrator if you think this is an error.'
+    console-cannot-use: '&c&lBruhCMD &8&l>> &c&lHey! &cYou are not allowed to use this command in console.'
+    not-enabled: '&c&lBruhCMD &8&l>> &cThis command is disabled by server administrators.'
+    player-not-found: '&c&lBruhCMD &8&l>> &cNo online players were found with that name. Did you spell it right?'
+    # Other Commands
+    sus-subtitle: 'Sabotage, eliminate, and betray the other crewmates.'
+    sus-player-message: 'no'
+  enabled-commands:
+    cutg: true
+    sus: true
+    pop: true
+    yeet: true
+    joe: true
+    cyberpunk: true
+    creeper: true
+    bomb: true
+  other:
+    #note, you might wanna research the Spigot material names to change the reward item
+    reward-item: DIAMOND
+    reward-amount: 20
+    # /cyberpunk setting
+    explosion-power: 10
