@@ -1,26 +1,33 @@
 name: BruhCMD
-version: 1.5.1
+version: 1.6
 author: Icynnac
-main: me.Icynnac.bruhcmd.Main
+main: me.icynnac.bruhcmd.Main
 description: idk
-
 commands:
   bruh:
-    description: The command that allows you to see bruh.
-  bruhcmd:
-    description: The general info for BruhCMD.
-    permission: bruhcmd.about
+    description: The command I thought of on that November 15th, 2020.
   bruh reload:
-    description: Reloads the plugin.
+    description: Reloads the config.yml
     permission: bruhcmd.reload
-  cutg:
-    description: Someone likes ya cut G.
-    permission: bruhcmd.cutg
-  pop:
-    description: pop cat + pop command
-  yeet:
-    description: yeet
-    permission: bruhcmd.yeet
   sus:
-    description: when the impostor is sus
+    description: you are sus.
     permission: bruhcmd.sus
+  cutg:
+    description: someone likes ya cut g
+    permission: bruhcmd.cutg
+  yeet:
+    description: yeet yourself into the stratosphere.
+    permission: bruhcmd.yeet
+  pop:
+    description: pop cat
+  bruhcmd:
+    description: a ui for basic stuff in bruhcmd
+    permission: bruhcmd.about
+  joe:
+    description: joe mama joke kicks people from server
+  cyberpunk:
+    description: aka hack fortnite and die for it
+  bomb:
+    description: boom.
+  creeper:
+    description: awww man
