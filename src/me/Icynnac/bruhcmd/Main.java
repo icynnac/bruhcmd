@@ -16,12 +16,21 @@ import java.util.logging.Logger;
 public final class Main extends JavaPlugin {
 
     public static Plugin instance;
+    public static String prefix;
+    public static String notenable;
+    public static String consoleno;
+    public static String noperm;
 
     @Override
     public void onEnable() {
+        // Plugin startup logic
         instance = this;
 
         saveDefaultConfig();
+        prefix = getConfig().getString("messages.prefix").replaceAll("&", "§");
+        notenable = getConfig().getString("messages.not-enabled").replaceAll("&", "§");
+        consoleno = getConfig().getString("messages.console-cannot-use").replaceAll("&", "§");
+        noperm = getConfig().getString("messages.no-permission-message").replaceAll("&", "§");
 
         getServer().getPluginManager().registerEvents(new BruhCMDEvents(), this);
         getServer().getPluginManager().registerEvents(new CommandsEvents(), this);
@@ -39,6 +48,7 @@ public final class Main extends JavaPlugin {
         getCommand("cyberpunk").setExecutor(new cyberbunk());
         getCommand("bomb").setExecutor(new bomb());
         getCommand("creeper").setExecutor(new creeper());
+        getCommand("dragon").setExecutor(new deez());
 
         Logger logger = this.getLogger();
 
