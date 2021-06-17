@@ -2,12 +2,7 @@ package me.icynnac.bruhcmd.events;
 
 import me.icynnac.bruhcmd.guis.CommandsUI;
 import me.icynnac.bruhcmd.guis.UpdatesUI;
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.HoverEvent;
-import net.md_5.bungee.api.chat.TextComponent;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -32,9 +27,9 @@ public class BruhCMDEvents implements Listener {
                     break;
                 case PAINTING:
                     p.closeInventory();
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9&m>----------&r&b&lBruhCMD&9&m----------<"));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9&m>---------- &r&b&l BruhCMD &9&m----------<"));
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&bMade by: &fIcynnac"));
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&bVersion: 1.6"));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&bVersion: 1.7"));
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', ""));
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7GitHub: https://github.com/icynnac/bruhcmd"));
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6Spigot: https://www.spigotmc.org/resources/bruhcmd.85804/"));

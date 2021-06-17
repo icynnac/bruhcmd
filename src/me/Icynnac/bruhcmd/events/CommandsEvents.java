@@ -42,7 +42,7 @@ public class CommandsEvents implements Listener {
                     p.closeInventory();
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lBruhCMD &8&l>> &cYou can't run this command in the GUI, it will most likely kill you."));
                     break;
-                case SULPHUR:
+                case GUNPOWDER:
                     p.closeInventory();
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lBruhCMD &8&l>> &cYou can't run this command in the GUI, it will most likely kill you."));
                     break;

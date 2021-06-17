@@ -8,7 +8,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
@@ -22,26 +21,23 @@ public class CyberbunkEvents implements Listener {
         World world = p.getLocation().getWorld();
         if (e.getView().getTitle().equalsIgnoreCase(ChatColor.GREEN + "Fortnite Control Panel")) {
             switch(e.getCurrentItem().getType()) {
-                case WOOL:
-                    switch (e.getCurrentItem().getDurability()) {
-                        case 14:
-                            p.closeInventory();
-                            p.getActivePotionEffects().clear();
-                            p.sendTitle(ChatColor.RED + "Deleting Fortnite...", ChatColor.RED + "Please wait...");
-                            BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
-                            scheduler.scheduleSyncDelayedTask(Main.instance, () -> {
+                case RED_WOOL:
+                    p.closeInventory();
+                    p.getActivePotionEffects().clear();
+                    p.sendTitle(ChatColor.RED + "Deleting Fortnite...", ChatColor.RED + "Please wait...");
+                    BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
+                    scheduler.scheduleSyncDelayedTask(Main.instance, () -> {
                                 p.sendMessage(ChatColor.RED + "Erasing Fortnite from existance (WARNING: Could cause 7 year olds to crank 90s irl, or explosions.)");
                             },100);
                             scheduler.scheduleSyncDelayedTask(Main.instance, () -> {
-                                world.createExplosion(p.getLocation(),Main.instance.getConfig().getInt("configuration.other.explosion-power"));
+                                world.createExplosion(p.getLocation(),10);
                             },180);
-                    }
                     break;
                 case PAINTING:
                     p.closeInventory();
                     p.getActivePotionEffects().clear();
                     p.sendTitle(ChatColor.translateAlternateColorCodes('&', "&cObama &kCare"), ChatColor.RED + "Obama's Last Name is...");
-                    BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
+                    scheduler = Bukkit.getServer().getScheduler();
                     scheduler.scheduleSyncDelayedTask(Main.instance, () -> {
                         p.sendTitle(ChatColor.translateAlternateColorCodes('&', "&cObama C&kare"), ChatColor.RED + "Obama's Last Name is.");
                     },40);

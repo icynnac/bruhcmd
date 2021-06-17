@@ -16,13 +16,9 @@ public class UpdateEvents implements Listener {
                 case BOOK:
                     p.closeInventory();
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lBruhCMD &8&l>> &6Versions List: https://www.spigotmc.org/resources/bruhcmd.85804/history"));
-                case STAINED_GLASS_PANE:
-                    if (e.getCurrentItem().getDurability() == 5) {
-                        if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.YELLOW + "" + ChatColor.BOLD + "Version 1.6")) {
-                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lBruhCMD &8&l>> &6Changelog: &bhttps://github.com/icynnac/bruhcmd/wiki/Changelogs"));
-                            p.closeInventory();
-                        }
-                    }
+                case LIME_STAINED_GLASS_PANE:
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lBruhCMD &8&l>> &6Changelog: &bhttps://github.com/icynnac/bruhcmd/wiki/Changelogs"));
+                    p.closeInventory();
                 case BARRIER:
                     p.closeInventory();
                     break;
