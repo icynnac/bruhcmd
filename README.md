@@ -1,6 +1,2 @@
-# bruhcmd
-A command that just says bruh.
-You may do whatever with the code, I don't care, this project was just me screwing around and i thought this would be funny.
-
-Libraries Used:
-Spigot lol
+# BruhCMD
+A plugin full of various memes that just kill you or others.
