@@ -23,13 +23,14 @@ public class CommandsUI {
         ItemStack yeet = new ItemStack(Material.FEATHER);
         ItemStack sus = new ItemStack(Material.LEATHER_HELMET);
         ItemStack joe = new ItemStack(Material.BOW);
-        ItemStack creeper = new ItemStack(Material.SULPHUR);
+        ItemStack creeper = new ItemStack(Material.GUNPOWDER);
         ItemStack boom = new ItemStack(Material.TNT);
         ItemStack cyberpunk = new ItemStack(Material.BREWING_STAND);
+        ItemStack dragon = new ItemStack(Material.CREEPER_HEAD);
         ItemStack close = new ItemStack(Material.BARRIER);
         ItemStack back = new ItemStack(Material.PAPER);
         ItemStack about = new ItemStack(Material.BOOK);
-        ItemStack filler = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)15);
+        ItemStack filler = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
 
         ItemMeta bruhM = bruh.getItemMeta();
         bruhM.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&b/bruh"));
@@ -97,7 +98,7 @@ public class CommandsUI {
         about.setItemMeta(aboutM);
 
         ItemMeta joeM = joe.getItemMeta();
-        joeM.setDisplayName(ChatColor.YELLOW + "/joe " + ChatColor.GOLD + "" + ChatColor.BOLD + "[New]");
+        joeM.setDisplayName(ChatColor.YELLOW + "/joe");
         ArrayList<String> joeL = new ArrayList<>();
         joeL.add(ChatColor.YELLOW + "JOE MAMA LMAO XD LOL i have brain damage");
         joeL.add(ChatColor.RED + "" + ChatColor.BOLD + "Requires Permission to run");
@@ -105,7 +106,7 @@ public class CommandsUI {
         joe.setItemMeta(joeM);
 
         ItemMeta cM = creeper.getItemMeta();
-        cM.setDisplayName(ChatColor.GREEN + "/creeper? " + ChatColor.GOLD + "" + ChatColor.BOLD + "[New]");
+        cM.setDisplayName(ChatColor.GREEN + "/creeper?");
         ArrayList<String> cL = new ArrayList<>();
         cL.add(ChatColor.GREEN + "Aww man...");
         cL.add(ChatColor.RED + "" + ChatColor.BOLD + "Requires Permission to run");
@@ -113,7 +114,7 @@ public class CommandsUI {
         creeper.setItemMeta(cM);
 
         ItemMeta cpM = cyberpunk.getItemMeta();
-        cpM.setDisplayName(ChatColor.YELLOW + "/cyberpunk " + ChatColor.GOLD + "" + ChatColor.BOLD + "[New]");
+        cpM.setDisplayName(ChatColor.YELLOW + "/cyberpunk");
         ArrayList<String> cpL = new ArrayList<>();
         cpL.add(ChatColor.AQUA + "wake the frick up human being.");
         cpL.add(ChatColor.AQUA + "we have a buggy game launch.");
@@ -122,11 +123,20 @@ public class CommandsUI {
         cyberpunk.setItemMeta(cpM);
 
         ItemMeta boomM = boom.getItemMeta();
-        boomM.setDisplayName(ChatColor.GOLD + "/boom" + ChatColor.GOLD + "" + ChatColor.BOLD + "[New]");
+        boomM.setDisplayName(ChatColor.GOLD + "/bomb");
         ArrayList<String> boomL = new ArrayList<>();
         boomL.add(ChatColor.WHITE + "literally just an explosion");
+        boomL.add(ChatColor.RED + "" + ChatColor.BOLD + "Requires Permission to run");
         boomM.setLore(boomL);
         boom.setItemMeta(boomM);
+
+        ItemMeta dragonM = boom.getItemMeta();
+        dragonM.setDisplayName(ChatColor.DARK_RED + "/dragon");
+        ArrayList<String> dragonL = new ArrayList<>();
+        dragonL.add(ChatColor.DARK_RED + "a forbidden command.");
+        dragonL.add(ChatColor.RED + "" + ChatColor.BOLD + "Requires Permission to run");
+        dragonM.setLore(dragonL);
+        dragon.setItemMeta(dragonM);
 
         ItemMeta closeM = close.getItemMeta();
         closeM.setDisplayName(ChatColor.RED + "" + ChatColor.BOLD + "Close");
@@ -148,6 +158,7 @@ public class CommandsUI {
         commands.setItem(14, yeet);
         commands.setItem(21, sus);
         commands.setItem(22, boom);
+        commands.setItem(23, dragon);
         commands.setItem(1, joe);
         commands.setItem(10, creeper);
         commands.setItem(19, cyberpunk);

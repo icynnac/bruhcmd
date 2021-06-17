@@ -22,6 +22,7 @@ public class BruhCMDUI implements CommandExecutor {
             ItemStack commands = new ItemStack(Material.ANVIL);
             ItemStack support = new ItemStack(Material.DIAMOND_PICKAXE);
             ItemStack update = new ItemStack(Material.GOLD_INGOT);
+            ItemStack server = new ItemStack(Material.BLAZE_POWDER);
 
             ItemMeta aboutM = about.getItemMeta();
             aboutM.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&a&lAbout"));

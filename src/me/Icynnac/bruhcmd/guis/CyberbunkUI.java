@@ -15,7 +15,7 @@ public class CyberbunkUI {
         Inventory inv = Bukkit.createInventory(null, 27, ChatColor.GREEN + "Fortnite Control Panel");
 
         ItemStack obamna = new ItemStack(Material.PAINTING);
-        ItemStack deletefortnite = new ItemStack(Material.WOOL, 1, (byte)14);
+        ItemStack deletefortnite = new ItemStack(Material.RED_WOOL);
         ItemStack vbuck = new ItemStack(Material.DIAMOND);
         ItemStack water = new ItemStack(Material.POTION);
 
