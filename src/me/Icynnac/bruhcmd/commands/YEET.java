@@ -15,25 +15,31 @@ public class YEET implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.hasPermission("bruhcmd.yeet")) {
             if (!(sender instanceof Player)) {
-                sender.sendMessage(ChatColor.RED + "BruhCMD >> Hey! You can't use this command in console.");
+                sender.sendMessage(Main.prefix + " " + Main.consoleno);
             } else {
-                if (Main.instance.getConfig().getString("configuration.enabled-commands.yeet").equalsIgnoreCase("true")) {
+                if (Main.instance.getConfig().getString("enabled-commands.yeet").equalsIgnoreCase("true")) {
                     if (args.length > 0) {
-                        Player target = Bukkit.getPlayer(args[0]);
-                        if (target != null) {
-                            Location loc = target.getLocation();
-                            Vector center = loc.toVector();
-                            Vector toThrow = target.getLocation().toVector();
-                            double x = toThrow.getX() - center.getX();
-                            double z = toThrow.getZ() - center.getZ();
+                        if (sender.hasPermission("bruhcmd.yeet-others")) {
+                            if (Main.instance.getConfig().getString("enabled-commands.yeet-others").equalsIgnoreCase("true")) {
+                                Player target = Bukkit.getPlayer(args[0]);
+                                if (target != null) {
+                                    Location loc = target.getLocation();
+                                    Vector center = loc.toVector();
+                                    Vector toThrow = target.getLocation().toVector();
+                                    double x = toThrow.getX() - center.getX();
+                                    double z = toThrow.getZ() - center.getZ();
 
-                            Vector v = new Vector (x,1,z).normalize().multiply(3.5);
+                                    Vector v = new Vector (x,1,z).normalize().multiply(3.5);
 
-                            target.setVelocity(v);
-                            target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lBruhCMD &8&l>> &cYEET"));
-                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lBruhCMD &8&l>> &aYou have yeeted &a&l" + target.getName()));
-                        } else {
-                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("configuration.messages.player-not-found")));
+                                    target.setVelocity(v);
+                                    target.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + " &cYEET"));
+                                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + " &aYou have yeeted &a&l" + target.getName()));
+                                } else {
+                                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("messages.player-not-found")));
+                                }
+                            } else {
+                                sender.sendMessage(Main.prefix + " " + ChatColor.RED + "Yeeting others has been disabled by a server administrator.");
+                            }
                         }
                     } else {
                         Player p = (Player) sender;
@@ -50,9 +56,11 @@ public class YEET implements CommandExecutor {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lBruhCMD &8&l>>  &cYEET"));
                     }
                 } else {
-                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("configuration.messages.not-enabled")));
+                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + " " + Main.notenable));
                 }
             }
+        } else {
+            sender.sendMessage(Main.prefix + " " + Main.noperm);
         }
         return false;
     }

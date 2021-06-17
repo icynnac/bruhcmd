@@ -14,9 +14,9 @@ public class CutG implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.hasPermission("bruhcmd.cutg")) {
             if (!(sender instanceof Player)) {
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("configuration.messages.console-cannot-use")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("messages.console-cannot-use")));
             } else {
-                if (Main.instance.getConfig().getString("configuration.enabled-commands.cutg").equalsIgnoreCase("true")) {
+                if (Main.instance.getConfig().getString("enabled-commands.cutg").equalsIgnoreCase("true")) {
                     sender.sendMessage(ChatColor.BLUE + "Ooh you playin " + ChatColor.GREEN + "Minecraft?");
                     BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
                     scheduler.scheduleSyncDelayedTask(Main.instance, () -> {
@@ -28,11 +28,11 @@ public class CutG implements CommandExecutor {
                         sender.sendMessage("<" + p.getDisplayName() + "> AAAAAAAAAAAAAAAAAAAAAAAA");
                     }, 20*5);
                 } else {
-                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("configuration.messages.not-enabled")));
+                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + " " + Main.notenable));
                 }
             }
         } else {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("configuration.messages.no-permission-message")));
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + " " + Main.noperm));
         }
         return false;
     }

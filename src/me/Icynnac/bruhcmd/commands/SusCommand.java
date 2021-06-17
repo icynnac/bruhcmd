@@ -17,12 +17,12 @@ public class SusCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             if (!(sender.hasPermission("bruhcmd.sus"))) {
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("configuration.messages.no-permission-message")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + " " + Main.noperm));
             } else {
-                if (Main.instance.getConfig().getString("configuration.enabled-commands.sus").equalsIgnoreCase("true")) {
+                if (Main.instance.getConfig().getString("enabled-commands.sus").equalsIgnoreCase("true")) {
                     Player p = (Player) sender;
                     p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 5, 2));
-                    p.sendTitle(ChatColor.RED + "Impostor", ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("configuration.messages.sus-subtitle")));
+                    p.sendTitle(ChatColor.RED + "Impostor", ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("messages.sus-subtitle")));
                     Location loc = p.getLocation();
                     p.playNote(loc, Instrument.PIANO, Note.natural(1, Note.Tone.E));
                     ItemStack sushat = new ItemStack(Material.LEATHER_HELMET);
@@ -56,7 +56,7 @@ public class SusCommand implements CommandExecutor {
                         p.playNote(loc, Instrument.SNARE_DRUM, Note.natural(1, Note.Tone.A));
                     }, 140);
                     scheduler.scheduleSyncDelayedTask(Main.instance, () -> {
-                        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f<&c" + sender.getName() + "&f> " + Main.instance.getConfig().getString("configuration.messages.sus-player-message")));
+                        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f<&c" + sender.getName() + "&f> " + Main.instance.getConfig().getString("messages.sus-player-message")));
                         // luckyblockjack has paid so he stays in this code
                         p.playNote(loc, Instrument.SNARE_DRUM, Note.natural(1, Note.Tone.A));
                     }, 180);
@@ -66,11 +66,11 @@ public class SusCommand implements CommandExecutor {
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c" + p1.getName() + "&f was the &cImpostor."));
                     }, 20 * 12);
                 } else {
-                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("configuration.messages.not-enabled")));
+                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + " " + Main.notenable));
                 }
             }
         } else {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("configuration.messages.console-cannot-use")));
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + " " + Main.consoleno));
         }
         return false;
     }

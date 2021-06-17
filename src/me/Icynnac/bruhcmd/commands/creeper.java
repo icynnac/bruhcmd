@@ -19,22 +19,30 @@ public class creeper implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player p = (Player) sender;
         World world = (World) p.getWorld();
-        if (p.hasPermission("bruhcmd.creeper")) {
-            if (Main.instance.getConfig().getString("configuration.enabled-commands.creeper").equalsIgnoreCase("true")) {
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aCreeper? &cAw man."));
-                BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
-                scheduler.scheduleSyncDelayedTask(Main.instance, () -> {
-                    p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 4));
-                    Creeper c = (Creeper) world.spawnEntity(p.getLocation(), EntityType.CREEPER);
-                    c.setPowered(true);
-                    Creeper c2 = (Creeper) world.spawnEntity(p.getLocation(), EntityType.CREEPER);
-                    c2.setPowered(true);
-                    Creeper c3 = (Creeper) world.spawnEntity(p.getLocation(), EntityType.CREEPER);
-                    c3.setPowered(true);
-                    Creeper c4 = (Creeper) world.spawnEntity(p.getLocation(), EntityType.CREEPER);
-                    c4.setPowered(true);
-                }, 60);
+        if (sender instanceof Player) {
+            if (p.hasPermission("bruhcmd.creeper")) {
+                if (Main.instance.getConfig().getString("enabled-commands.creeper").equalsIgnoreCase("true")) {
+                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aCreeper? &cAw man."));
+                    BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
+                    scheduler.scheduleSyncDelayedTask(Main.instance, () -> {
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 4));
+                        Creeper c = (Creeper) world.spawnEntity(p.getLocation(), EntityType.CREEPER);
+                        c.setPowered(true);
+                        Creeper c2 = (Creeper) world.spawnEntity(p.getLocation(), EntityType.CREEPER);
+                        c2.setPowered(true);
+                        Creeper c3 = (Creeper) world.spawnEntity(p.getLocation(), EntityType.CREEPER);
+                        c3.setPowered(true);
+                        Creeper c4 = (Creeper) world.spawnEntity(p.getLocation(), EntityType.CREEPER);
+                        c4.setPowered(true);
+                    }, 60);
+                } else {
+                    sender.sendMessage(Main.prefix + " " + Main.notenable);
+                }
+            } else {
+                sender.sendMessage(Main.prefix + " " + Main.noperm);
             }
+        } else {
+            sender.sendMessage(Main.prefix + " " + Main.consoleno);
         }
         return false;
     }

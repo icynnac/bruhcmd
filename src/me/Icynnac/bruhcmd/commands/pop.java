@@ -14,15 +14,15 @@ public class pop implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("configuration.messages.console-cannot-use")));
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + " " + Main.consoleno));
         } else {
-            if (Main.instance.getConfig().getString("configuration.enabled-commands.pop").equalsIgnoreCase("true")) {
+            if (Main.instance.getConfig().getString("enabled-commands.pop").equalsIgnoreCase("true")) {
                 Player p = (Player) sender;
                 Location loc = p.getLocation();
                 p.playNote(loc, Instrument.BASS_DRUM, Note.natural(0, Note.Tone.G));
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lBruhCMD &8&l>> &9pop."));
             } else {
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("configuration.messages.not-enabled")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + " " + Main.notenable));
             }
         }
         return false;
